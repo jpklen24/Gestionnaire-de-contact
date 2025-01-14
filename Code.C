@@ -9,6 +9,26 @@ typedef struct{
       char email[50];
   }contact;
 
+//Fonction pour afficher les contacts
+
+void afficherContact(contact p[100], int cont){
+     if(cont==0){
+        printf("Aucun contact n'a ete ajouter\n");
+        return;
+    }
+
+    printf("-------Liste de contact-------\n");
+
+    for(int i=0; i<cont;i++){
+       printf("Contact #%d\n",i+1);
+       printf("Nom: %s \n",p[i].nom);
+       printf("Numero: %d \n",p[i].numero);
+       printf("Email: %s \n",p[i].email);
+       printf("-------------------------------\n");
+
+    }
+
+}
 
 //Fonction pour charger les contactes depuis un fichier binaire
 
