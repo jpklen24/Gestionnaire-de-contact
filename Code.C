@@ -10,25 +10,47 @@ typedef struct{
       char email[50];
   }contact;
 
-//Fonction pour afficher les contacts
+//Fonction pour supprimer un contact
 
-void afficherContact(contact p[100], int cont){
-     if(cont==0){
+void supprimerContact(contact p[100], int *cont){
+     if(*cont==0){
         printf("Aucun contact n'a ete ajouter\n");
         return;
     }
 
-    printf("-------Liste de contact-------\n");
+    char name[50];
+    printf("Entrer le nom du contact a supprimer\n");
+    scanf("%s", name);
 
-    for(int i=0; i<cont;i++){
-       printf("Contact #%d\n",i+1);
-       printf("Nom: %s \n",p[i].nom);
-       printf("Numero: %d \n",p[i].numero);
-       printf("Email: %s \n",p[i].email);
-       printf("-------------------------------\n");
+    for(int i=0; i<*cont; i++){
+         if(strcmp(p[i].nom, name)==0){
+            for(int j=i; j<*cont-1; j++){
 
+                p[j]=p[j+1];
+                
+            }
+            (*cont)--;
+            printf("Contact supprimer avec suces\n");
+            return;
+         } 
+    }
+    printf("Contact non trouvee\n");
+    
+}
+
+//Fonction pour sauvegarder un contact
+
+void sauvegardeContact(contact p[100], int cont){
+    FILE *fichier = fopen("contact.bin","wb");
+
+    if(fichier==NULL){
+        printf("Impossible de sauvegarder le contact\n");
     }
 
+    fwrite(&cont,sizeof(int),1,fichier);
+    fwrite(p,sizeof(contact),cont,fichier);
+    fclose(fichier);
+    printf("Sauvegarde effectue\n");
 }
 
 //Fonction pour charger les contactes depuis un fichier binaire
