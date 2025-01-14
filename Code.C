@@ -33,7 +33,7 @@ void afficherContact(contact p[100], int cont){
 
 //Fonction pour charger les contactes depuis un fichier binaire
 
-void chargerContact(contact p[100], int cont){
+void chargerContact(contact p[100], int *cont){
     FILE *fichier=fopen("C:\\Users\\Tiptop\\Documents\\contact.txt","rb");
 
     if(fichier==NULL){
@@ -41,7 +41,7 @@ void chargerContact(contact p[100], int cont){
     }
 
     fread(&cont,sizeof(int),1,fichier);
-    fread(p,sizeof(contact),cont,fichier);
+    fread(p,sizeof(contact),*cont,fichier);
     fclose(fichier);
     printf("Chargement effectue\n");
 }
