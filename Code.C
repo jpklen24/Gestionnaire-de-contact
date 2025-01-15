@@ -10,6 +10,20 @@ typedef struct{
       char email[50];
   }contact;
 
+// Fonction pour ajouter un contact
+void ajouterContact(contact p[100], int *cont) {
+    printf("\n=== Ajouter un Contact ===\n");
+    printf("Nom: ");
+    scanf("%99s", p[*cont].nom);  // Saisie sécurisée du nom
+    printf("Numéro: ");
+    scanf("%d", &p[*cont].numero);
+    printf("Email: ");
+    scanf("%49s", p[*cont].email);  // Saisie sécurisée de l'email
+
+    (*cont)++;  // Incrémentation du nombre de contacts
+    printf("\n[+] Contact ajouté avec succès !\n");
+}
+
 //Fonction pour supprimer un contact
 
 void supprimerContact(contact p[100], int *cont){
