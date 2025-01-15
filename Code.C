@@ -171,18 +171,10 @@ int main(){
   int choix;
 
 //Menu
+    printf("--------------------BIENVENUE DANS LE GESTIONNAIRE DE CONTACTS---------------------\n\n");
   do{
-    printf("\n==============================\n");
-    printf("      GESTION DES CONTACTS     \n");
-    printf("==============================\n");
-    printf("1. Ajouter un contact\n");
-    printf("2. Modifier un contact\n");
-    printf("3. Afficher les contacts\n");
-    printf("4. Rechercher un contact\n");
-    printf("5. Supprimer un contact\n");
-    printf("6. Quitter\n");
-    printf("==============================\n");
-    printf("Votre choix : ");
+    printf("||1-Ajouter un contact || 2-Modifier un contact || 3-Afficher un contact || 4-Rechercher un contact ||\n\n|| 5-Supprimer un contact || 6-Sauvegarder un contact || 7-Charger un contact || 8-Quitter || \n\n");
+    printf("Entrer votre choix\n");
     scanf("%d",&choix);
 
     switch(choix){
@@ -196,7 +188,7 @@ int main(){
 
         case 3:
             afficherContact(p,nbrecontact);
-                   break;
+            break;
 
         case 4:
             rechercheContact(p,nbrecontact);
@@ -218,14 +210,14 @@ int main(){
             printf("Fin \n");
             break;
 
-           default:
+            
+        default:
             printf("Error. Veillez entrer un numero correct\n");
     }
 
   }while(choix!=8);
   return 0;
- }
-
+ } 
             
 
            
