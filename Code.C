@@ -161,6 +161,7 @@ void afficherContact(contact p[100], int cont) {
         printf("Nom   : %s\n", p[i].nom);
         printf("Numéro: %d\n", p[i].numero);
         printf("Email : %s\n", p[i].email);
+        printf("-------------------------");
     }
 }
 
