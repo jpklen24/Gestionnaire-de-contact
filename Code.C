@@ -92,6 +92,33 @@ void modifierContact(contact p[100],int cont){
     printf("Modification reussi\n");
 
 }
+void rechercheContact(contact p[100], int cont){
+    if(cont==0){
+        printf("Aucun contact n'a ete ajouter\n");
+        return;
+    }
+
+    char name[50];
+    printf("Entrer le nom du contact que vous rechercher\n");
+    scanf("%s", name);
+
+    for(int i=0; i<cont; i++){
+        if(strcmp(p[i].nom, name)==0){
+            printf("Contact Trouvee\n");
+            printf("-------------------------------\n");
+            printf("Contact #%d\n",i+1);
+            printf("Nom: %s \n",p[i].nom);
+            printf("Numero: %d \n",p[i].numero);
+            printf("Email: %s \n",p[i].email);
+            printf("-------------------------------\n");
+            return;
+        }
+    }
+    
+    printf("Contact non trouvee\n");
+
+}
+
 
 int main(){
     contact p[100];
