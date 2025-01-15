@@ -68,7 +68,7 @@ void chargerContact(contact p[100], int *cont){
     printf("Chargement effectue\n");
 }
 
-//Fonction pour modifier un contact//
+//Fonction pour modifier un contact
 
 void modifierContact(contact p[100],int cont){
     if(cont==0){
@@ -98,7 +98,7 @@ int main(){
   int nbrecontact=0;
   int choix;
 
-//Menu//
+//Menu
 
   printf("--------------------BIENVENUE DANS LE GESTIONNAIRE DE CONTACTS---------------------\n\n");
   do{
