@@ -100,7 +100,7 @@ int main(){
 
 //Menu
 
-  printf("--------------------BIENVENUE DANS LE GESTIONNAIRE DE CONTACTS---------------------\n\n");
+  printf("--------------------BIENVENUE DANS LE GESTIONNAIRE DE CONTACTS---------------------\n");
   do{
     printf("||1-Ajouter un contact || 2-Modifier un contact || 3-Afficher un contact || 4-Rechercher un contact ||\n\n|| 5-Supprimer un contact || 6-Sauvegarder un contact || 7-Charger un contact || 8-Quitter || \n\n");
     printf("Entrer votre choix\n");
